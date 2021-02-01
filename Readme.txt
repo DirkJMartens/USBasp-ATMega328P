@@ -46,14 +46,23 @@ SOFTWARE
 ========
 Once the above circuit has been made (I made it on a piece of perfboard), we can focus on the software side. 
 1. From the fischl-download, go to the "firmware" folder: 
-	- Edit the makefile by commenting out the 3 existing "TARGET =" lines and by adding the following 3 lines: 
+	- Edit the "makefile" by commenting out any "TARGET =" lines and add/edit the following 3 lines: 
 		TARGET=atmega328P
 		HFUSE=0xDE
 		LFUSE=0xFF
 	  (The edited makefile is included in this github) 
+	- The "bin\firmware" folder contains the .hex files for ATMEGA8, 48 and 88 but I need one for the 328. 
+	- This can be done in a number of ways using a number of different applications, I will use files included in a standard Arduino IDE install for this. 
+	- So we need to recompile the "main.c" source code into the 328-compatible .hex file, so we will need the avr-gcc.exe file for this. 
+	- Copy the following files from the Arduino installation folder to the folder with "main.c" in it:
+		- avr-gcc.exe
+		- avr-objcopy.exe 
+		- libwinpthread-1.dll 
+	  The standard location for this is "C:\Program Files (x86)\Arduino\hardware\tools\avr\bin" 
 	- From a Command Prompt, run the "make" command to show the help file and available options. 
 	- Use the "make clean" command to remove the temporary files such as the .o, .lst and .bin files etc. 
 	- Finally, use the "make main.hex" command to compile a new hex-file (which with the edit above is now suited for 328p). 
+	- 
 	- This will generate a bunch of files, of which "main.hex" is the one we need for uploading into the 328p. 
 	  (This main.hex file is also included in the github) 
 2. To upload the "main.hex" file in an ATMEGA328P: 
