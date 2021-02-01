@@ -1,4 +1,4 @@
-My implementation of the USBasp project on Windows 10. 
+My implementation of the USBasp project on Windows 10 using an ATMEGA328p. 
 USBasp was started by www.fischl.de/usbasp  
 
 HARDWARE
