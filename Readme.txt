@@ -1,5 +1,6 @@
 My implementation of the USBasp project on Windows 10 using an ATMEGA328p. 
-USBasp was started by www.fischl.de/usbasp  
+USBasp was started by www.fischl.de/usbasp 
+This project also uses V-USB files from http://www.obdev.at/vusb and Zadig.exe from https://zadig.akeo.ie 
 
 HARDWARE
 ========
